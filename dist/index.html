@@ -99,6 +99,7 @@
   <style>
     .question-card .card-icon svg{width:42px!important;height:42px!important;stroke-width:1.8!important}
     @media(min-width:801px){.quote-top p{width:310px;max-width:310px}}
+    @media(min-width:801px){.quote-top{display:block}.quote-top p{width:auto;max-width:560px;margin-top:20px}}
   </style>
 </head>
 <body>
@@ -207,7 +208,7 @@
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
   </script>
   <script>
-    const processSubtitle=document.querySelector('.process .process-copy');if(processSubtitle)processSubtitle.textContent='La soluzione più adatta a te';
+    const processSubtitle=document.querySelector('.process .process-copy');if(processSubtitle)processSubtitle.textContent='Pianificazione, riprese e pubblicazione: un percorso organizzato insieme, per comunicare con continuità e rispettare l’identità del progetto.';
   </script>
 </body>
 </html>
