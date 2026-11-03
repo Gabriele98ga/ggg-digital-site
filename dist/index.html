@@ -98,6 +98,7 @@
 </style>
   <style>
     .question-card .card-icon svg{width:42px!important;height:42px!important;stroke-width:1.8!important}
+    @media(min-width:801px){.quote-top p{width:310px;max-width:310px}}
   </style>
 </head>
 <body>
@@ -204,6 +205,9 @@
     const refreshStockIcons=()=>{replaceLocalActivityIcon();replacePublicActivityIcon();replaceVideoMethodIcon();if(window.lucide)lucide.createIcons({attrs:{'stroke-width':1.8}})};
     refreshStockIcons();
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
+  </script>
+  <script>
+    const processSubtitle=document.querySelector('.process .process-copy');if(processSubtitle)processSubtitle.textContent='La soluzione più adatta a te';
   </script>
 </body>
 </html>
