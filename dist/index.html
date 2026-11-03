@@ -119,11 +119,11 @@
   </script>
   <script>
     const syncRequestButton=()=>{const activity=document.querySelector('#activities .selected');const goal=document.querySelector('#goals .selected');const base=document.querySelector('#bases .active');const email=document.querySelector('#email');document.querySelector('.wizard-result').classList.toggle('ready',Boolean(activity&&goal&&base&&email&&email.checkValidity()))};
-    document.addEventListener('input',syncRequestButton);new MutationObserver(syncRequestButton).observe(document.querySelector('.wizard-main'),{subtree:true,childList:true,attributes:true});setTimeout(syncRequestButton,0);
+    document.addEventListener('input',syncRequestButton);setTimeout(syncRequestButton,0);
   </script>
   <script>
     const syncEmailOnly=()=>{const email=document.querySelector('#email');document.querySelector('.wizard-result').classList.toggle('ready',Boolean(email&&email.value.trim()&&email.checkValidity()))};
-    document.addEventListener('input',syncEmailOnly);new MutationObserver(syncEmailOnly).observe(document.querySelector('.wizard-main'),{subtree:true,childList:true,attributes:true});setTimeout(syncEmailOnly,0);
+    document.addEventListener('input',syncEmailOnly);setTimeout(syncEmailOnly,0);
   </script>
   <script>
     const teamIcons=['<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="15" width="27" height="20" rx="3"/><circle cx="15" cy="10" r="5"/><circle cx="27" cy="10" r="5"/><path d="M34 21l8-4v14l-8-4M12 35v5h20v-5"/></svg>','<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c5 5 7 11 7 17s-2 12-7 17M24 7c-5 5-7 11-7 17s2 12 7 17M10 14h28M10 34h28"/></svg>','<svg viewBox="0 0 48 48" aria-hidden="true"><path d="m29 8 11 11-20 20-12 3 3-12Z"/><path d="m25 12 11 11M8 42l8-2"/></svg>'];
