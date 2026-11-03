@@ -125,7 +125,7 @@
     document.querySelectorAll('.team-icon').forEach((icon,index)=>{icon.innerHTML=teamIcons[index]||teamIcons[2]});
   </script>
   <script>
-    document.querySelectorAll('.team-card').forEach(card=>card.insertAdjacentHTML('beforeend','<a class="linkedin" href="#" aria-label="Profilo LinkedIn da collegare">in</a>'));
+    document.querySelectorAll('.team-card').forEach(card=>{const isGabrieleCiardi=card.querySelector('h3')?.textContent.trim()==='Gabriele Ciardi';card.insertAdjacentHTML('beforeend',isGabrieleCiardi?'<a class="linkedin" href="https://www.linkedin.com/in/gabriele-ciardi-a52aa0211/" aria-label="Profilo LinkedIn di Gabriele Ciardi">in</a>':'<a class="linkedin" href="#" aria-label="Profilo LinkedIn da collegare">in</a>')});
   </script>
   <script>
     const teamTitle=document.querySelector('.team h2');if(teamTitle)teamTitle.textContent='Le persone, le 3 G';
