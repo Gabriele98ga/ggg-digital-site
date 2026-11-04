@@ -214,6 +214,7 @@
     refreshStockIcons();
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
     ['goals','bases','addons'].forEach(id=>{const grid=document.querySelector('#'+id);if(grid)new MutationObserver(refreshStockIcons).observe(grid,{childList:true})});
+    const wizardIconSync=document.querySelector('.wizard-main');if(wizardIconSync){wizardIconSync.addEventListener('click',()=>setTimeout(refreshStockIcons,0),true);wizardIconSync.addEventListener('change',()=>setTimeout(refreshStockIcons,0),true)}
   </script>
   <script>
     const processSubtitle=document.querySelector('.process .process-copy');if(processSubtitle)processSubtitle.textContent='Pianificazione, riprese e pubblicazione: un percorso organizzato insieme, per comunicare con continuità e rispettare l’identità del progetto.';
