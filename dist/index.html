@@ -199,13 +199,14 @@
   <script>
     const replaceLocalActivityIcon=()=>{const card=document.querySelector('[data-activity="local"] .card-icon');if(card&&!card.querySelector('[data-lucide],svg'))card.innerHTML='<i data-lucide="store" aria-hidden="true"></i>'};
     const replacePublicActivityIcon=()=>{const card=document.querySelector('[data-activity="public"] .card-icon');if(card&&!card.querySelector('[data-lucide],svg'))card.innerHTML='<i data-lucide="landmark" aria-hidden="true"></i>'};
+    const replaceActivityIcon=(id,name)=>{const card=document.querySelector(`[data-activity="${id}"] .card-icon`);if(card&&!card.querySelector('[data-lucide],svg'))card.innerHTML=`<i data-lucide="${name}" aria-hidden="true"></i>`};
     const replaceVideoMethodIcon=()=>{const step=document.querySelectorAll('.process-step')[1];if(step)step.querySelector('.method-icon').innerHTML='<i data-lucide="clapperboard" aria-hidden="true"></i>'};
     replacePublicActivityIcon();replaceVideoMethodIcon();
     const activitiesGrid=document.querySelector('#activities');if(activitiesGrid)new MutationObserver(replacePublicActivityIcon).observe(activitiesGrid,{childList:true});
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    const refreshStockIcons=()=>{replaceLocalActivityIcon();replacePublicActivityIcon();replaceVideoMethodIcon();if(window.lucide)lucide.createIcons({attrs:{'stroke-width':1.8}})};
+    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','sparkles');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceVideoMethodIcon();if(window.lucide)lucide.createIcons({attrs:{'stroke-width':1.8}})};
     refreshStockIcons();
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
   </script>
