@@ -97,8 +97,8 @@
     .wizard-main.first-step .wizard-actions{display:none}
 </style>
   <style>
-    .question-card .card-icon svg{width:42px!important;height:42px!important;stroke-width:1.5!important}
-    .process-step .method-icon svg{stroke-width:1.5!important}
+    .question-card .card-icon svg{width:42px!important;height:42px!important;stroke-width:1.4!important}
+    .process-step .method-icon svg{stroke-width:1.4!important}
     @media(min-width:801px){.quote-top p{width:310px;max-width:310px}}
     @media(min-width:801px){.quote-top{display:block}.quote-top p{width:auto;max-width:560px;margin-top:20px}}
     .desktop-request{display:none!important}
@@ -207,7 +207,7 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','utensils');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceVideoMethodIcon();if(window.lucide)lucide.createIcons({attrs:{'stroke-width':1.5}})};
+    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','coffee');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceVideoMethodIcon();if(window.lucide)lucide.createIcons({attrs:{'stroke-width':1.4}})};
     refreshStockIcons();
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
   </script>
