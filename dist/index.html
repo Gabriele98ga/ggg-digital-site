@@ -103,6 +103,8 @@
     .method-icon{font-size:32px!important}
     .nav-cta:after{content:none!important}
     .nav-cta svg{width:14px!important;height:14px!important;stroke-width:1.6!important;vertical-align:-2px;margin-left:3px}
+    .secondary:after{content:none!important}
+    .secondary svg,.footer-contact button svg{width:14px!important;height:14px!important;stroke-width:1.6!important;vertical-align:-2px;margin-left:4px}
     @media(min-width:801px){.quote-top p{width:310px;max-width:310px}}
     @media(min-width:801px){.quote-top{display:block}.quote-top p{width:auto;max-width:560px;margin-top:20px}}
     .desktop-request{display:none!important}
@@ -211,12 +213,13 @@
     const replaceVideoMethodIcon=()=>{const step=document.querySelectorAll('.process-step')[1];if(step)step.querySelector('.method-icon').innerHTML='<i data-lucide="clapperboard" aria-hidden="true"></i>'};
     const replaceMethodIcons=()=>{const names=['target','clapperboard','sparkles','check','messages-square'];document.querySelectorAll('.process-step .method-icon').forEach((icon,index)=>{icon.innerHTML=`<i data-lucide="${names[index]}" aria-hidden="true"></i>`})};
     const replaceNavIcon=()=>{const button=document.querySelector('.nav-cta');if(button&&!button.querySelector('[data-lucide],svg'))button.insertAdjacentHTML('beforeend','<i data-lucide="arrow-up-right" aria-hidden="true"></i>')};
+    const replaceButtonIcons=()=>{const secondary=document.querySelector('.secondary');if(secondary&&!secondary.querySelector('[data-lucide],svg'))secondary.insertAdjacentHTML('beforeend','<i data-lucide="arrow-up-right" aria-hidden="true"></i>');const footerButton=document.querySelector('#footer-contact button');if(footerButton&&!footerButton.querySelector('[data-lucide],svg')){footerButton.textContent='Iniziamo a parlarne';footerButton.insertAdjacentHTML('beforeend','<i data-lucide="arrow-up-right" aria-hidden="true"></i>')}};
     replacePublicActivityIcon();replaceVideoMethodIcon();
     const activitiesGrid=document.querySelector('#activities');if(activitiesGrid)new MutationObserver(replacePublicActivityIcon).observe(activitiesGrid,{childList:true});
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','sparkles');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceGoalIcon('presence','circle-dot');replaceGoalIcon('content','pencil');replaceGoalIcon('conversion','arrow-up-right');replaceGoalIcon('digital','workflow');replaceBaseIcon('base','circle-dashed');replaceBaseIcon('medio','circle-dot');replaceBaseIcon('plus','sparkles');replaceAddonIcon('landing','house');replaceAddonIcon('site','grid-2x2');replaceAddonIcon('google','map-pin');replaceAddonIcon('seo','search');replaceAddonIcon('booking','calendar-days');replaceAddonIcon('extra','sparkles');replaceMethodIcons();replaceNavIcon();if(window.lucide){lucide.createIcons({attrs:{'stroke-width':1.4}});document.documentElement.classList.add('icons-ready')}};
+    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','sparkles');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceGoalIcon('presence','circle-dot');replaceGoalIcon('content','pencil');replaceGoalIcon('conversion','arrow-up-right');replaceGoalIcon('digital','workflow');replaceBaseIcon('base','circle-dashed');replaceBaseIcon('medio','circle-dot');replaceBaseIcon('plus','sparkles');replaceAddonIcon('landing','house');replaceAddonIcon('site','grid-2x2');replaceAddonIcon('google','map-pin');replaceAddonIcon('seo','search');replaceAddonIcon('booking','calendar-days');replaceAddonIcon('extra','sparkles');replaceMethodIcons();replaceNavIcon();replaceButtonIcons();if(window.lucide){lucide.createIcons({attrs:{'stroke-width':1.4}});document.documentElement.classList.add('icons-ready')}};
     refreshStockIcons();
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
     ['goals','bases','addons'].forEach(id=>{const grid=document.querySelector('#'+id);if(grid)new MutationObserver(refreshStockIcons).observe(grid,{childList:true})});
