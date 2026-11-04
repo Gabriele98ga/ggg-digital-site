@@ -97,6 +97,7 @@
     .wizard-main.first-step .wizard-actions{display:none}
 </style>
   <style>
+    html:not(.icons-ready) .question-card .card-icon,html:not(.icons-ready) .choice .card-icon,html:not(.icons-ready) .addon-icon,html:not(.icons-ready) .process-step .method-icon{visibility:hidden}
     .card-icon{font-size:32px!important;line-height:1!important}
     .card-icon svg,.addon-icon svg,.method-icon svg,.team-card .team-icon svg{width:32px!important;height:32px!important;stroke-width:1.4!important}
     .method-icon{font-size:32px!important}
@@ -215,7 +216,7 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','sparkles');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceGoalIcon('presence','circle-dot');replaceGoalIcon('content','pencil');replaceGoalIcon('conversion','arrow-up-right');replaceGoalIcon('digital','workflow');replaceBaseIcon('base','circle-dashed');replaceBaseIcon('medio','circle-dot');replaceBaseIcon('plus','sparkles');replaceAddonIcon('landing','house');replaceAddonIcon('site','grid-2x2');replaceAddonIcon('google','map-pin');replaceAddonIcon('seo','search');replaceAddonIcon('booking','calendar-days');replaceAddonIcon('extra','sparkles');replaceMethodIcons();replaceNavIcon();if(window.lucide)lucide.createIcons({attrs:{'stroke-width':1.4}})};
+    const refreshStockIcons=()=>{replaceLocalActivityIcon();replaceActivityIcon('food','sparkles');replacePublicActivityIcon();replaceActivityIcon('politics','circle-dot');replaceActivityIcon('other','plus');replaceGoalIcon('presence','circle-dot');replaceGoalIcon('content','pencil');replaceGoalIcon('conversion','arrow-up-right');replaceGoalIcon('digital','workflow');replaceBaseIcon('base','circle-dashed');replaceBaseIcon('medio','circle-dot');replaceBaseIcon('plus','sparkles');replaceAddonIcon('landing','house');replaceAddonIcon('site','grid-2x2');replaceAddonIcon('google','map-pin');replaceAddonIcon('seo','search');replaceAddonIcon('booking','calendar-days');replaceAddonIcon('extra','sparkles');replaceMethodIcons();replaceNavIcon();if(window.lucide){lucide.createIcons({attrs:{'stroke-width':1.4}});document.documentElement.classList.add('icons-ready')}};
     refreshStockIcons();
     const activitiesStockObserver=document.querySelector('#activities');if(activitiesStockObserver)new MutationObserver(refreshStockIcons).observe(activitiesStockObserver,{childList:true});
     ['goals','bases','addons'].forEach(id=>{const grid=document.querySelector('#'+id);if(grid)new MutationObserver(refreshStockIcons).observe(grid,{childList:true})});
